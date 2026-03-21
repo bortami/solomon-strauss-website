@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  {
+    q: 'What, exactly, is mentalism?',
+    a: 'Mentalism is the art of appearing to read minds, predict decisions, and perceive things that have not been spoken aloud. "Appearing" is doing some work in that sentence, and Solomon has a considered position on how much. He has been performing mentalism for twenty-five years, always in combination with storytelling — which means that by the time something impossible happens, there is usually a story attached to it that makes the impossible feel, in retrospect, almost inevitable.',
+  },
+  {
+    q: 'What kinds of events does Solomon perform at?',
+    a: 'Corporate gatherings, private social events, weddings and receptions, theater performances, festivals, and parlor shows. He has performed for groups of eight and groups of eight hundred. Both, in his experience, contain at least one person who arrived skeptical and left with questions they did not have when they walked in.',
+  },
+  {
+    q: 'How long is a typical performance?',
+    a: 'For strolling close-up magic at an event — working the room, table to table — typically two to three hours. For a parlor or stage show, forty-five minutes to an hour is standard, with longer sets available for theater engagements. He is, as a rule, punctual. The start time you agree upon is the start time.',
+  },
+  {
+    q: 'How far in advance should I book?',
+    a: 'For private parties and social events, a month out is generally sufficient — though more notice is always welcome. For corporate events, the sooner the better; these tend to involve more moving parts, and he books up accordingly. That said, he can accommodate shorter timelines when his schedule allows. If your event is coming up quickly, say so in your inquiry and he will let you know what is possible.',
+  },
+  {
+    q: 'Does Solomon travel?',
+    a: 'He is based in Oklahoma City and performs throughout Oklahoma and the surrounding region as a matter of routine. For the right engagement, he travels nationally. Travel and accommodation specifics are discussed during the booking conversation — there are no unpleasant surprises in the contract.',
+  },
+  {
+    q: 'What does it cost?',
+    a: 'Rates vary based on the nature of the event, the duration of the performance, and travel involved. He does not list prices on this website on the reasonable grounds that a private dinner party in Edmond and a corporate keynote in Dallas are different occasions requiring different conversations. He is, however, happy to provide a clear quote promptly — usually within two business days of an inquiry.',
+  },
+  {
+    q: 'What should I expect from the booking process?',
+    a: 'Send an inquiry using the form on this site. He will respond — typically within two business days — with a few questions of his own about the event, the audience, and what you are hoping people will walk away with. From there, a contract and deposit confirm the date. He has been doing this long enough to make the administrative side entirely unremarkable, which is, he would argue, the point.',
+  },
+  {
+    q: 'Is the performance appropriate for all ages?',
+    a: 'Solomon performs for adult audiences. His humor is dry rather than crude, but it is adult humor — the kind that rewards a certain amount of life experience. He is not a children\'s entertainer, and his shows are not designed with younger audiences in mind. Teenagers and children are welcome at his public theater performances, where the format is more forgiving of a mixed crowd. For private events, he is best suited to adult gatherings.',
+  },
+  {
+    q: 'Can guests take photos or video during the performance?',
+    a: 'Still photography is generally welcome. Video of specific illusions or mentalism routines is politely discouraged — not out of vanity, but because seeing something impossible happen once is an experience, while watching a video of it is considerably less so. He is happy to discuss specifics in advance if this matters to you.',
+  },
+  {
+    q: 'Does he need anything from the venue or host?',
+    a: 'For close-up and strolling work: very little. A point of contact on the day, and an introduction if the event format allows for one. For stage and parlor shows: a performance space, adequate lighting, and ideally a brief walkthrough beforehand. He will send a technical rider with any relevant requirements well in advance of the event. There are no unexpected demands.',
+  },
+  {
+    q: 'What makes Solomon different from other performers?',
+    a: 'He has, over the years, developed a considered position on this question: he declines to answer it directly. He would suggest, instead, that you read the testimonials, visit a performance, or ask someone who has hired him. He can provide references. He has several. They all say something slightly different, which he considers a point in his favor.',
+  },
+  {
+    q: 'What if I need to cancel or reschedule?',
+    a: 'Cancellation and rescheduling terms are outlined clearly in the performance agreement before any deposit is made. In general: deposits are non-refundable, but credits toward a future date are often possible depending on the circumstances. Life happens. He is a reasonable person and conducts himself accordingly.',
+  },
+];
+---
+
+<Layout
+  title="FAQ — Solomon Strauss"
+  description="Answers to the questions first-time clients most often ask about booking Solomon Strauss — what to expect, how it works, and what he prefers you ask before deciding."
+>
+  <Nav />
+
+  <main id="main-content">
+
+    <!-- Page hero -->
+    <section
+      style="background:#0f0d0a; padding: 10rem 1.5rem 5rem; text-align:center;"
+    >
+      <p class="section-label" style="display:block; margin-bottom:1rem;">Before You Ask</p>
+      <div class="rule-short"></div>
+      <h1
+        style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.25rem,5vw,3.5rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em; margin-top:0.5rem; margin-bottom:1.5rem;"
+      >
+        Frequently Asked Questions
+      </h1>
+      <p
+        style="font-family:'IM Fell English',serif; font-style:italic; font-size:1.1rem; color:#9a8870; max-width:48ch; margin:0 auto; line-height:1.75;"
+      >
+        He has answered most of these questions enough times that it seemed
+        reasonable to write them down.
+      </p>
+    </section>
+
+    <!-- FAQ list -->
+    <section style="background:#0f0d0a; padding: 0 1.5rem 8rem;">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="rule" style="margin-bottom:4rem;"></div>
+
+        <dl class="space-y-0">
+          {faqs.map((faq, i) => (
+            <div
+              class="reveal"
+              style={`padding: 2.5rem 0; ${i < faqs.length - 1 ? 'border-bottom: 1px solid rgba(184,146,74,0.12);' : ''}`}
+            >
+              <!-- Question -->
+              <dt
+                style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:#f5e9cc; margin-bottom:1rem; line-height:1.4;"
+              >
+                <span style="color:#b8924a; margin-right:0.75rem; font-size:0.9rem;">✦</span>{faq.q}
+              </dt>
+
+              <!-- Answer -->
+              <dd
+                style="font-family:'Lora',serif; font-size:1rem; color:#a09078; line-height:1.85; margin:0; padding-left:1.75rem;"
+              >
+                {faq.a}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        <!-- CTA -->
+        <div style="text-align:center; padding-top:4rem;">
+          <div class="rule-short"></div>
+          <p
+            style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:#9a8870; margin-bottom:2rem;"
+          >
+            Still have a question not covered here?
+          </p>
+          <a href="/#book" class="btn-gold">Get in Touch</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

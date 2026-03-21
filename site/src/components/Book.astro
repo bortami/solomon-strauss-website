@@ -1,0 +1,129 @@
+---
+---
+
+<section id="book" style="background:#0f0d0a; padding: 7rem 0;">
+  <div class="max-w-3xl mx-auto px-6 md:px-10">
+
+    <!-- Heading -->
+    <div class="reveal text-center mb-4">
+      <span class="section-label">Inquiries</span>
+      <div class="rule-short"></div>
+      <h2
+        style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,2.75rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
+      >
+        Book an Experience
+      </h2>
+    </div>
+
+    <!-- Epigraph -->
+    <div class="reveal text-center mb-10">
+      <p style="font-family:'IM Fell English',serif; font-style:italic; font-size:1.1rem; color:#9a8870; line-height:1.7; max-width:44ch; margin:0 auto;">
+        If you're reading this, you're probably already curious.
+        That's usually how it starts.
+      </p>
+    </div>
+
+    <!-- Process note -->
+    <div class="reveal text-center mb-14">
+      <p style="font-family:'Cormorant Garamond',serif; font-size:0.9rem; color:#6b5f52; line-height:1.7; max-width:50ch; margin:0 auto; letter-spacing:0.03em;">
+        He responds to most inquiries within two business days. If your event
+        is within thirty days, please note that in your message.
+        Questions before committing? He has a
+        <a href="/faq" style="color:#b8924a; text-decoration:none; border-bottom:1px solid rgba(184,146,74,0.3);">FAQ page</a>
+        for that.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form
+      class="reveal space-y-8"
+      name="booking"
+      method="POST"
+      action="/thank-you"
+      data-netlify="true"
+    >
+      <input type="hidden" name="form-name" value="booking" />
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <label
+            for="name"
+            style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+          >Your Name</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            placeholder="Full name"
+            class="form-field"
+          />
+        </div>
+        <div>
+          <label
+            for="email"
+            style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+          >Email Address</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+            class="form-field"
+          />
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <label
+            for="event-type"
+            style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+          >The Occasion</label>
+          <select id="event-type" name="event_type" class="form-field">
+            <option value="" disabled selected>Select event type</option>
+            <option value="private">Private Party / Social Event</option>
+            <option value="corporate">Corporate Event</option>
+            <option value="wedding">Wedding / Reception</option>
+            <option value="festival">Festival / Public Show</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label
+            for="event-date"
+            style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+          >When</label>
+          <input
+            id="event-date"
+            type="text"
+            name="event_date"
+            placeholder="Month, Year or approximate"
+            class="form-field"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          for="message"
+          style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+        >Tell Him About It</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="The nature of the event, approximate guest count, location — and anything else he should probably know."
+          class="form-field"
+          style="resize:vertical;"
+        ></textarea>
+      </div>
+
+      <div class="text-center pt-2">
+        <button type="submit" class="btn-gold">Make Your Inquiry Known</button>
+      </div>
+    </form>
+
+  </div>
+</section>

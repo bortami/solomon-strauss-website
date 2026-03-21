@@ -1,0 +1,232 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0f0d0a;
+  --color-surface: #1c1710;
+  --color-surface-2: #241e14;
+  --color-text: #e8ddc8;
+  --color-muted: #9a8870;
+  --color-gold: #b8924a;
+  --color-gold-light: #d4ae6a;
+  --color-cream: #f5e9cc;
+
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Lora', serif;
+  --font-accent: 'IM Fell English', serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0f0d0a;
+  color: #e8ddc8;
+  font-family: 'Lora', serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0f0d0a; }
+::-webkit-scrollbar-thumb { background: #b8924a; }
+
+::selection { background: #b8924a; color: #0f0d0a; }
+
+/* ── Reveal animation ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+/* ── Gold rules ───────────────────────────────────────────── */
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b8924a 30%, #b8924a 70%, transparent);
+  opacity: 0.55;
+}
+.rule-short {
+  width: 60px;
+  height: 1px;
+  background: #b8924a;
+  margin: 1.25rem auto;
+  opacity: 0.65;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.btn-gold {
+  display: inline-block;
+  padding: 0.9rem 2.75rem;
+  border: 1px solid #b8924a;
+  color: #b8924a;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  background: transparent;
+}
+.btn-gold:hover {
+  background: #b8924a;
+  color: #0f0d0a;
+  box-shadow: 0 0 32px rgba(184, 146, 74, 0.3);
+}
+
+/* ── Pull quote ───────────────────────────────────────────── */
+.pull-quote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  line-height: 1.6;
+  color: #f5e9cc;
+  position: relative;
+  padding-left: 1.75rem;
+  border-left: 2px solid rgba(184, 146, 74, 0.6);
+}
+
+/* ── Craft cards ──────────────────────────────────────────── */
+.craft-card {
+  background: #1c1710;
+  border: 1px solid rgba(184, 146, 74, 0.15);
+  border-top: 2px solid #b8924a;
+  padding: 2.5rem 2rem;
+  transition: border-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+.craft-card:hover {
+  border-color: rgba(184, 146, 74, 0.4);
+  border-top-color: #d4ae6a;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Testimonial ──────────────────────────────────────────── */
+.testimonial {
+  position: relative;
+  padding: 1.5rem 1.5rem 1.5rem 3.75rem;
+}
+.testimonial::before {
+  content: '\201C';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: #b8924a;
+  opacity: 0.55;
+}
+
+/* ── Form fields ──────────────────────────────────────────── */
+.form-field {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(184, 146, 74, 0.3);
+  padding: 0.75rem 0;
+  color: #e8ddc8;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  -webkit-appearance: none;
+}
+.form-field:focus { border-bottom-color: #b8924a; }
+.form-field::placeholder { color: #9a8870; }
+.form-field option { background: #1c1710; color: #e8ddc8; }
+
+/* ── Nav links ────────────────────────────────────────────── */
+.nav-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a8870;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #b8924a;
+  transition: width 0.3s ease;
+}
+.nav-link:hover { color: #b8924a; }
+.nav-link:hover::after { width: 100%; }
+
+/* ── Hero background gradient ─────────────────────────────── */
+.hero-bg {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 20%, rgba(36, 26, 12, 0.98) 0%, rgba(15, 13, 10, 1) 65%),
+    linear-gradient(180deg, #1e1810 0%, #0f0d0a 100%);
+}
+
+/* ── Noise texture overlay ────────────────────────────────── */
+.texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Section headings ─────────────────────────────────────── */
+.section-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #b8924a;
+}
+
+/* ── Focus styles (WCAG 2.4.7) ───────────────────────────── */
+:focus-visible {
+  outline: 2px solid #b8924a;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Skip navigation link (WCAG 2.4.1) ───────────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: #b8924a;
+  color: #0f0d0a;
+  padding: 0.6rem 1.25rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  z-index: 9999;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: none;
+}
+
+/* ── Mobile nav ───────────────────────────────────────────── */
+#mobile-menu {
+  display: none;
+}
+#mobile-menu.open {
+  display: flex;
+}

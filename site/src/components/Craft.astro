@@ -1,0 +1,81 @@
+---
+const services = [
+  {
+    glyph: '⬡',
+    title: 'Close-Up Magic',
+    body: 'The impossible, administered at close range. Particularly effective at events where everyone is ostensibly paying attention to something else entirely.',
+    detail: 'Cards · Coins · Objects · Minds',
+  },
+  {
+    glyph: '◈',
+    title: 'Mentalism',
+    body: 'He will tell you things you have not said aloud. This is, depending on your perspective, either remarkable or inconvenient. Occasionally both.',
+    detail: 'Thought Reading · Prediction · Influence',
+  },
+  {
+    glyph: '❖',
+    title: 'Stage & Parlor',
+    body: 'An evening-length experience for rooms full of people who came for a show and left with a story. Old tales made stranger by the fact that at least one of them appears to be about someone in the audience.',
+    detail: 'Narrative · Illusion · Revelation · Wonder',
+  },
+];
+---
+
+<section id="craft" style="background:#1c1710; padding: 7rem 0;">
+  <div class="max-w-6xl mx-auto px-6 md:px-10">
+
+    <!-- Heading -->
+    <div class="reveal text-center mb-16">
+      <span class="section-label">What He Does</span>
+      <div class="rule-short"></div>
+      <h2
+        style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,2.75rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
+      >
+        The Craft
+      </h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-6">
+      {services.map((s, i) => (
+        <div class={`craft-card reveal reveal-delay-${i + 1 as 1 | 2 | 3}`}>
+          <!-- Glyph -->
+          <div style="font-size:1.5rem; color:rgba(184,146,74,0.5); margin-bottom:1.25rem;">
+            {s.glyph}
+          </div>
+
+          <!-- Title -->
+          <h3
+            style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:#f5e9cc; margin-bottom:1rem; letter-spacing:0.03em;"
+          >
+            {s.title}
+          </h3>
+
+          <!-- Rule -->
+          <div style="width:36px; height:1px; background:#b8924a; opacity:0.6; margin-bottom:1.25rem;"></div>
+
+          <!-- Body -->
+          <p style="color:#a09078; font-size:0.97rem; line-height:1.8; margin-bottom:1.5rem;">
+            {s.body}
+          </p>
+
+          <!-- Detail -->
+          <p
+            style="font-family:'Cormorant Garamond',serif; font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(184,146,74,0.5);"
+          >
+            {s.detail}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Epigraph -->
+    <div class="reveal text-center mt-20" style="max-width:52ch; margin-left:auto; margin-right:auto;">
+      <p style="font-family:'IM Fell English',serif; font-style:italic; font-size:1.15rem; color:#9a8870; line-height:1.7;">
+        "A man who asks no questions is told no lies. A man who asks the right ones
+        rarely needs to be told anything at all."
+        <span style="display:block; font-size:0.8rem; letter-spacing:0.2em; margin-top:0.75rem; opacity:0.5;">— offered, as he puts it, without further comment</span>
+      </p>
+    </div>
+  </div>
+</section>
