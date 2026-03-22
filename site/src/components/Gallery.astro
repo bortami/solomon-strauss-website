@@ -1,12 +1,6 @@
 ---
 ---
 
-<!--
-  Gallery section — add your performance photos to /public/images/gallery/
-  Replace the placeholder divs below with <img> tags:
-    <img src="/images/gallery/photo-1.jpg" alt="Performance" class="gallery-img" />
--->
-
 <section id="gallery" style="background:#0f0d0a; padding: 7rem 0;">
   <div class="max-w-6xl mx-auto px-6 md:px-10">
 
@@ -20,60 +14,94 @@
       </h2>
     </div>
 
-    <!-- Photo grid — replace with real images -->
+    <!-- Masonry grid — 2 cols mobile, 3 cols desktop -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 reveal">
-      {[
-        { aspect: 'aspect-[3/4]', delay: '' },
-        { aspect: 'aspect-[4/3]', delay: 'row-span-1' },
-        { aspect: 'aspect-[3/4]', delay: '' },
-        { aspect: 'aspect-[16/9]', delay: 'col-span-2' },
-        { aspect: 'aspect-square', delay: '' },
-      ].map((item, i) => (
-        <div
-          class={`relative overflow-hidden ${item.aspect} ${item.delay}`}
-          style="border: 1px solid rgba(184,146,74,0.1);"
-        >
-          <!-- Placeholder — replace with img tag -->
-          <div
-            aria-hidden="true"
-            class="w-full h-full flex items-center justify-center"
-            style={`background: radial-gradient(ellipse at 50% 40%, rgba(36,26,12,0.8), #0a0907); min-height:160px;`}
-          >
-            <span style="font-family:'Cormorant Garamond',serif; font-size:0.7rem; letter-spacing:0.25em; color:rgba(184,146,74,0.2); text-transform:uppercase;">
-              Photo {i + 1}
-            </span>
-          </div>
-          <!-- Hover overlay -->
-          <div
-            class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100"
-            style="background: rgba(184,146,74,0.06);"
-          ></div>
-        </div>
-      ))}
+
+      <!-- Row 1: portrait + wide landscape spanning 2 cols -->
+      <div class="relative overflow-hidden aspect-[3/4] gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <img
+          src="/images/gallery/IMG_3150.jpg"
+          alt="Solomon Strauss in performance"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter:contrast(1.05) sepia(0.12);"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+      </div>
+
+      <div class="relative overflow-hidden aspect-[3/4] md:aspect-[4/3] col-span-1 md:col-span-2 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <img
+          src="/images/gallery/IMG_2960.jpeg"
+          alt="Solomon Strauss performing"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter:contrast(1.05) sepia(0.12);"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+      </div>
+
+      <!-- Row 2: three equal columns -->
+      <div class="relative overflow-hidden aspect-[4/3] gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <img
+          src="/images/gallery/IMG_3035.jpg"
+          alt="Solomon Strauss at an event"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter:contrast(1.05) sepia(0.12);"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+      </div>
+
+      <div class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <img
+          src="/images/gallery/IMG_8626%20conv.jpeg"
+          alt="Solomon Strauss close-up"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter:contrast(1.05) sepia(0.12);"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+      </div>
+
+      <div class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <img
+          src="/images/gallery/Untitled%20design%20(1).jpg"
+          alt="Solomon Strauss"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter:contrast(1.05) sepia(0.12);"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+      </div>
+
+      <!-- Row 3: full-width cinematic shot -->
+      <div class="relative overflow-hidden aspect-[16/9] col-span-2 md:col-span-3 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <img
+          src="/images/gallery/IMG_8628.jpg"
+          alt="Solomon Strauss on stage"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter:contrast(1.05) sepia(0.12);"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+      </div>
+
     </div>
 
-    <!-- Video reel placeholder -->
-    <div class="reveal mt-10">
+    <!-- Video reel -->
+    <div class="reveal mt-3">
       <div
-        class="relative w-full aspect-video flex items-center justify-center"
+        class="relative w-full aspect-video gold-corners"
         style="background:#1c1710; border: 1px solid rgba(184,146,74,0.2);"
       >
-        <!--
-          To embed a video, replace this div with:
-          <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            class="absolute inset-0 w-full h-full"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        -->
-        <div class="text-center">
-          <div style="font-size:2.5rem; color:rgba(184,146,74,0.3); margin-bottom:0.75rem;">▶</div>
-          <p style="font-family:'Cormorant Garamond',serif; font-size:0.85rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(184,146,74,0.35);">
-            Performance Reel
-          </p>
-        </div>
+        <iframe
+          src="https://www.youtube.com/embed/hN3cbVCqz04"
+          class="absolute inset-0 w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          title="Solomon Strauss performance reel"
+        ></iframe>
       </div>
     </div>
 

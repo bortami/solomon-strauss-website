@@ -223,6 +223,33 @@ body {
   outline: none;
 }
 
+/* ── Gold corner accents (gallery & portrait frames) ─────── */
+.gold-corners::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    /* top-left — horizontal */
+    linear-gradient(#b8924a, #b8924a) 12px 12px / 20px 1px no-repeat,
+    /* top-left — vertical */
+    linear-gradient(#b8924a, #b8924a) 12px 12px / 1px 20px no-repeat,
+    /* top-right — horizontal */
+    linear-gradient(#b8924a, #b8924a) calc(100% - 32px) 12px / 20px 1px no-repeat,
+    /* top-right — vertical */
+    linear-gradient(#b8924a, #b8924a) calc(100% - 13px) 12px / 1px 20px no-repeat,
+    /* bottom-left — horizontal */
+    linear-gradient(#b8924a, #b8924a) 12px calc(100% - 13px) / 20px 1px no-repeat,
+    /* bottom-left — vertical */
+    linear-gradient(#b8924a, #b8924a) 12px calc(100% - 32px) / 1px 20px no-repeat,
+    /* bottom-right — horizontal */
+    linear-gradient(#b8924a, #b8924a) calc(100% - 32px) calc(100% - 13px) / 20px 1px no-repeat,
+    /* bottom-right — vertical */
+    linear-gradient(#b8924a, #b8924a) calc(100% - 13px) calc(100% - 32px) / 1px 20px no-repeat;
+  opacity: 0.55;
+}
+
 /* ── Mobile nav ───────────────────────────────────────────── */
 #mobile-menu {
   display: none;
