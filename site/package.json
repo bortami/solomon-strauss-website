@@ -12,6 +12,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource/cinzel-decorative": "^5.2.8",
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/im-fell-english": "^5.2.6",
+    "@fontsource/lora": "^5.2.8",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.0.8",
     "tailwindcss": "^4.2.2"
