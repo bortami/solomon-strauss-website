@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Thank You — Solomon Strauss"
+  description="Your inquiry has been received. Solomon will be in touch within two business days."
+>
+  <Nav />
+
+  <main id="main-content">
+    <section
+      style="background:#0f0d0a; padding: 12rem 1.5rem 10rem; text-align:center; min-height:70vh; display:flex; align-items:center; justify-content:center;"
+    >
+      <div class="max-w-2xl mx-auto">
+        <p class="section-label" style="display:block; margin-bottom:1rem;">Received</p>
+        <div class="rule-short"></div>
+        <h1
+          style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.25rem,5vw,3.5rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em; margin-top:0.5rem; margin-bottom:1.5rem;"
+        >
+          Your Inquiry Has Been Sent
+        </h1>
+        <p
+          style="font-family:'IM Fell English',serif; font-style:italic; font-size:1.1rem; color:#9a8870; max-width:44ch; margin:0 auto 3rem; line-height:1.75;"
+        >
+          Solomon responds to most inquiries within two business days.
+          If your event is soon, he will keep that in mind.
+        </p>
+        <a href="/" class="btn-gold">Return Home</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

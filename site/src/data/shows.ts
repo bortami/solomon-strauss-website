@@ -15,13 +15,13 @@ export interface Show {
 // ─────────────────────────────────────────────────────────────
 export const upcomingShows: Show[] = [
   {
-    date: 'April 12, 2025',
-    day: 'Saturday',
-    time: '8:00 PM',
-    venue: 'Venue Name',
+    date: 'April 17, 2026',
+    day: 'Friday',
+    time: '7:00 PM',
+    venue: 'Put a Cork In It',
     location: 'Oklahoma City, OK',
-    description: 'An evening of mentalism and storytelling.',
-    ticketUrl: 'https://example.com/tickets',
+    description: 'Close-Up Conjuring & Cabernet - A Tableside Magic Experience',
+    ticketUrl: 'https://www.eventbrite.com/e/close-up-conjuring-cabernet-a-tableside-magic-experience-tickets-1986109758753?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl',
   },
   // Add more shows here...
 ];
