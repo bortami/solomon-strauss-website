@@ -40,7 +40,7 @@ const services = [
       {services.map((s, i) => (
         <div class={`craft-card reveal reveal-delay-${i + 1 as 1 | 2 | 3}`}>
           <!-- Glyph -->
-          <div style="font-size:1.5rem; color:rgba(184,146,74,0.5); margin-bottom:1.25rem;">
+          <div style="font-size:1.5rem; color:rgba(184,146,74,0.5); margin-bottom:1.25rem;" aria-hidden="true">
             {s.glyph}
           </div>
 
