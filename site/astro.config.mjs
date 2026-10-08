@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://solomonstrauss.com',
+  site: 'https://solomonstrange.com',
   adapter: cloudflare(),
   integrations: [sitemap()],
   vite: {

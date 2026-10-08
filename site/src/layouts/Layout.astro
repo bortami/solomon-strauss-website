@@ -7,12 +7,12 @@ interface Props {
 }
 
 const {
-  title = 'Solomon Strauss — Mentalist & Storyteller | Oklahoma City',
-  description = 'Solomon Strauss is an award-winning mentalist and storyteller based in Oklahoma City. Twenty-five years of close-up magic, stage illusions, and the kind of knowing that keeps people up at night.',
+  title = 'Solomon Strange — Mentalist & Storyteller | Oklahoma City',
+  description = 'Solomon Strange is an award-winning mentalist and storyteller based in Oklahoma City. Twenty-five years of close-up magic, stage illusions, and the kind of knowing that keeps people up at night.',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, 'https://solomonstrauss.com');
-const ogImage = 'https://solomonstrauss.com/images/solomon-headshot.jpg';
+const canonicalURL = new URL(Astro.url.pathname, 'https://solomonstrange.com');
+const ogImage = 'https://solomonstrange.com/images/solomon-headshot.jpg';
 ---
 
 <!DOCTYPE html>
@@ -60,7 +60,7 @@ const ogImage = 'https://solomonstrauss.com/images/solomon-headshot.jpg';
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Solomon Strauss" />
+    <meta property="og:site_name" content="Solomon Strange" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -73,18 +73,17 @@ const ogImage = 'https://solomonstrauss.com/images/solomon-headshot.jpg';
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Solomon Strauss",
+      "name": "Solomon Strange",
       "jobTitle": "Mentalist & Storyteller",
-      "url": "https://solomonstrauss.com",
-      "image": "https://solomonstrauss.com/images/solomon-headshot.jpg",
+      "url": "https://solomonstrange.com",
+      "image": "https://solomonstrange.com/images/solomon-headshot.jpg",
       "description": "Award-winning mentalist and storyteller based in Oklahoma City with 25 years of experience performing close-up magic, mentalism, and stage shows.",
       "areaServed": [
         { "@type": "City", "name": "Oklahoma City" },
         { "@type": "Country", "name": "United States" }
       ],
       "sameAs": [
-        "https://www.instagram.com/solomon.strauss/",
-        "https://www.gigsalad.com/solomon_strauss_oklahoma_city"
+        "https://www.gigsalad.com/solomon_strange"
       ]
     }
     </script>
