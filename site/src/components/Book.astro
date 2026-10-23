@@ -130,3 +130,13 @@
 
   </div>
 </section>
+
+<script>
+  document.querySelector('form[name="booking"]')?.addEventListener('submit', () => {
+    (window as any).oaiq?.(
+      "measure",
+      "lead_created",
+      { type: "customer_action" }
+    );
+  });
+</script>
