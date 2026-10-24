@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const lastUpdated = 'October 24, 2026';
+
+const sections = [
+  {
+    heading: 'What This Page Covers',
+    body: [
+      'This policy explains what information is collected when you visit this website or submit the booking inquiry form, and how that information is used. It applies to solomonstrange.com only.',
+    ],
+  },
+  {
+    heading: 'Information Collected Through the Booking Form',
+    body: [
+      'When you submit an inquiry, the form collects your name, email address, and any event details you choose to include (event type, date, and message). This information is used only to respond to your inquiry and, if you proceed, to plan and deliver the performance you booked.',
+      'Your information is never sold, rented, or shared with third parties for marketing purposes. It is not used for any purpose beyond communicating with you about your event.',
+    ],
+  },
+  {
+    heading: 'Analytics and Site Usage',
+    body: [
+      'This site uses Google Analytics to understand general traffic patterns, such as which pages are visited and how visitors arrive at the site. This data is aggregated and anonymized to the extent provided by Google Analytics, and is used only to improve the site.',
+    ],
+  },
+  {
+    heading: 'Cloudflare',
+    body: [
+      'This site is served through Cloudflare, which provides performance and security infrastructure (such as protection against malicious traffic). Cloudflare may process standard technical information — like IP address and browser type — as part of delivering the site to you. This is infrastructure-level processing, not used for advertising or profiling.',
+    ],
+  },
+  {
+    heading: 'Cookies',
+    body: [
+      'Google Analytics and Cloudflare may set cookies or use similar technologies as part of their normal operation. These are limited to the purposes described above — site analytics and secure delivery of the site — and are not used to sell your data.',
+    ],
+  },
+  {
+    heading: 'Data Retention',
+    body: [
+      'Booking inquiry information is kept only as long as needed to respond to you and, if applicable, fulfill a booked performance. You may request that your information be deleted at any time by reaching out through the contact form or directly by email.',
+    ],
+  },
+  {
+    heading: 'Changes to This Policy',
+    body: [
+      'This policy may be updated occasionally to reflect changes in how the site operates. The date at the top of this page reflects the most recent update.',
+    ],
+  },
+  {
+    heading: 'Questions',
+    body: [
+      'If you have questions about this policy or how your information is handled, reach out using the inquiry form on the home page.',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Privacy Policy — Solomon Strange"
+  description="How Solomon Strange collects, uses, and protects information submitted through this website."
+>
+  <Nav />
+
+  <main id="main-content">
+
+    <!-- Page hero -->
+    <section
+      style="background:#0f0d0a; padding: 10rem 1.5rem 5rem; text-align:center;"
+    >
+      <p class="section-label" style="display:block; margin-bottom:1rem;">Your Information</p>
+      <div class="rule-short"></div>
+      <h1
+        style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.25rem,5vw,3.5rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em; margin-top:0.5rem; margin-bottom:1.5rem;"
+      >
+        Privacy Policy
+      </h1>
+      <p
+        style="font-family:'IM Fell English',serif; font-style:italic; font-size:1.1rem; color:#9a8870; max-width:48ch; margin:0 auto; line-height:1.75;"
+      >
+        Last updated: {lastUpdated}
+      </p>
+    </section>
+
+    <!-- Policy sections -->
+    <section style="background:#0f0d0a; padding: 0 1.5rem 8rem;">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="rule" style="margin-bottom:4rem;"></div>
+
+        <div class="space-y-0">
+          {sections.map((section, i) => (
+            <div
+              class="reveal"
+              style={`padding: 2.5rem 0; ${i < sections.length - 1 ? 'border-bottom: 1px solid rgba(184,146,74,0.12);' : ''}`}
+            >
+              <h2
+                style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:500; color:#f5e9cc; margin-bottom:1rem; line-height:1.4;"
+              >
+                <span style="color:#b8924a; margin-right:0.75rem; font-size:0.9rem;">✦</span>{section.heading}
+              </h2>
+              {section.body.map((para) => (
+                <p
+                  style="font-family:'Lora',serif; font-size:1rem; color:#a09078; line-height:1.85; margin:0 0 1rem; padding-left:1.75rem;"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
