@@ -110,6 +110,21 @@
 
       <div>
         <label
+          for="event-location"
+          style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+        >Event Location</label>
+        <input
+          id="event-location"
+          type="text"
+          name="event_location"
+          required
+          placeholder="City/venue where the event will take place"
+          class="form-field"
+        />
+      </div>
+
+      <div>
+        <label
           for="message"
           style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
         >Tell Him About It</label>
@@ -117,7 +132,7 @@
           id="message"
           name="message"
           rows="5"
-          placeholder="The nature of the event, approximate guest count, location — and anything else he should probably know."
+          placeholder="The nature of the event, approximate guest count, location — and anything else I should probably know."
           class="form-field"
           style="resize:vertical;"
         ></textarea>
