@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    glyph: '⬡',
+    title: 'Private Engagements',
+    body: 'For parties or 5 or more, enjoy a private show that will leave you and your guests something to remember for a long time, all from the comfort of your own couch.',
+  },
+  {
+    glyph: '❖',
+    title: 'Stage & Parlor',
+    body: 'An evening-length experience of stand up entertainment for rooms full of people who came for a show and leave with a story. Experience having your mind read, controlled, and influenced, and magical feats. Don’t worry though, I only tell the good things I see!',
+  },
+];
+
+const credentials = [
+  'Thirty years of experience',
+  'Top-rated on GigSalad · Award-winning performer',
+  'Corporate events, private gatherings, theater & stage',
+  'Oklahoma City, Tulsa & Beyond',
+];
+
+const testimonials = [
+  {
+    quote: "Absolutely blew us away. He was funny and his timing was excellent. Every trick was compelling and astonishing. Definitely would recommend and will likely hire again!",
+    attribution: 'G. Rucci · Private Event · Oklahoma City, OK',
+  },
+  {
+    quote: "This guy was extremely professional, as well as wonderfully entertaining. He goes above and beyond to do a great show and is very, very laid-back and easy to work with.",
+    attribution: 'P. Laughlin · Corporate Event · Oklahoma City, OK',
+  },
+];
+---
+
+<Layout
+  title="Hire Solomon Strange — Mentalist, Magician & Storyteller | Oklahoma City"
+  description="Book award-winning entertainment for your corporate event, private party, or wedding in Oklahoma City. Thirty years of magic & mind reading. I respond within two business days."
+>
+  <!-- Minimal header — name only, no nav away from this page -->
+  <header style="padding: 1.75rem 1.5rem 0;">
+    <div class="max-w-3xl mx-auto text-center">
+      <p
+        style="font-family:'Cinzel Decorative', serif; font-size:0.85rem; letter-spacing:0.1em; color:#f5e9cc;"
+      >Solomon Strange</p>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section
+      class="relative text-center hero-bg texture overflow-hidden"
+      style="padding: 3rem 1.5rem 4.5rem;"
+    >
+      <div class="relative max-w-5xl mx-auto grid md:grid-cols-2 md:gap-14 items-center" style="z-index: 3;">
+
+        <!-- Text column -->
+        <div class="text-center md:text-left">
+          <p class="ornament mb-6" style="font-size:0.85rem; letter-spacing:0.6em;" aria-hidden="true">· · · ✦ · · ·</p>
+
+          <h1
+            style="font-family:'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 2.9rem); font-weight: 400; color: #f5e9cc; letter-spacing: 0.02em; line-height: 1.25; margin-bottom: 1.25rem;"
+          >
+            Magic &amp; Mind Reading for Your Next Event
+          </h1>
+
+          <div class="rule mx-auto md:mx-0 mb-5" style="max-width: 220px;"></div>
+
+          <p
+            style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.05rem, 2.5vw, 1.3rem); font-style: italic; font-weight: 300; color: #b8924a; letter-spacing: 0.08em; margin-bottom: 0.85rem;"
+          >
+            Corporate Events &nbsp;·&nbsp; Private Parties &nbsp;·&nbsp; Weddings
+          </p>
+
+          <p
+            style="font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9a8870; margin-bottom: 2rem;"
+          >
+            Oklahoma City, Tulsa &amp; Beyond
+          </p>
+
+          <p
+            style="font-family: 'Lora', serif; font-size: clamp(1rem, 2vw, 1.1rem); color: #9a8870; max-width: 46ch; margin: 0 auto 2.5rem; line-height: 1.8;"
+          >
+            Thirty years of weaving Magic, Mentalism, and Storytelling into strange, unforgettable experiences.
+          </p>
+
+          <a href="#book-form" class="btn-gold">Check Availability</a>
+        </div>
+
+        <!-- Image column -->
+        <div class="mt-14 md:mt-0">
+          <div class="relative mx-auto md:mx-0 overflow-hidden gold-corners w-full max-w-[420px] md:max-w-none aspect-[3/2] md:aspect-square" style="border: 1px solid rgba(184,146,74,0.2);">
+            <img
+              src="/images/gallery/8A5A8375.jpg"
+              alt="Solomon Strange performing mentalism for a live audience"
+              class="absolute inset-0 w-full h-full object-cover"
+              style="filter: contrast(1.05) sepia(0.12);"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section style="background:#1c1710; padding: 2.5rem 1.5rem;">
+      <ul
+        class="max-w-4xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-4"
+        style="font-family:'Cormorant Garamond',serif; font-size:0.92rem; color:#9a8870; letter-spacing:0.03em;"
+      >
+        {credentials.map(c => (
+          <li class="flex items-start gap-2 justify-center text-center">
+            <span style="color:#b8924a;" aria-hidden="true">✦</span>
+            <span>{c}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Services -->
+    <section style="background:#0f0d0a; padding: 5rem 0;">
+      <div class="max-w-4xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-12">
+          <span class="section-label">What You Get</span>
+          <div class="rule-short"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {services.map(s => (
+            <div class="craft-card">
+              <div style="font-size:1.5rem; color:rgba(184,146,74,0.5); margin-bottom:1.25rem;" aria-hidden="true">
+                {s.glyph}
+              </div>
+              <h3
+                style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:#f5e9cc; margin-bottom:1rem; letter-spacing:0.03em;"
+              >
+                {s.title}
+              </h3>
+              <div style="width:36px; height:1px; background:#b8924a; opacity:0.6; margin-bottom:1.25rem;"></div>
+              <p style="color:#a09078; font-size:0.95rem; line-height:1.8;">
+                {s.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="background:#1c1710; padding: 5rem 0;">
+      <div class="max-w-3xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-12">
+          <span class="section-label">Reviews</span>
+          <div class="rule-short"></div>
+        </div>
+
+        <div class="space-y-10">
+          {testimonials.map(t => (
+            <div class="testimonial">
+              <p
+                style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem, 2.5vw, 1.3rem); font-weight:300; color:#e8ddc8; line-height:1.65; margin-bottom:0.75rem;"
+              >
+                {t.quote}
+              </p>
+              <p
+                style="font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a;"
+              >
+                — {t.attribution}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking form -->
+    <section id="book-form" style="background:#0f0d0a; padding: 6rem 0;">
+      <div class="max-w-3xl mx-auto px-6 md:px-10">
+
+        <div class="text-center mb-4">
+          <span class="section-label">Inquiries</span>
+          <div class="rule-short"></div>
+          <h2
+            style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.85rem,4vw,2.5rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
+          >
+            Check Your Date
+          </h2>
+        </div>
+
+        <div class="text-center mb-10">
+          <p style="font-family:'Cormorant Garamond',serif; font-size:0.9rem; color:#9a8870; line-height:1.7; max-width:50ch; margin:0 auto; letter-spacing:0.03em;">
+            I respond to most inquiries within two business days. No pushy sales tactics, no stress. If your event
+            is within thirty days, please note that in your message.
+            Questions before committing? I have a
+            <a href="/faq" style="color:#b8924a; text-decoration:none; border-bottom:1px solid rgba(184,146,74,0.3);">FAQ page</a>
+            for that.
+          </p>
+        </div>
+
+        <form
+          class="space-y-8"
+          name="booking"
+          method="POST"
+          action="https://api.web3forms.com/submit"
+        >
+          <input type="hidden" name="access_key" value="47d14bdd-e207-4d47-878e-61b5082bb91a" />
+          <input type="hidden" name="subject" value="New Booking Inquiry – Solomon Strange (Landing Page)" />
+          <input type="hidden" name="lead_source" value="Google Ads Landing Page" />
+          <input type="hidden" name="redirect" value="https://solomonstrange.com/thank-you" />
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <label
+                for="name"
+                style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+              >Your Name</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                required
+                placeholder="Full name"
+                autocomplete="name"
+                class="form-field"
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+              >Email Address</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                autocomplete="email"
+                class="form-field"
+              />
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <label
+                for="event-type"
+                style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+              >The Occasion</label>
+              <select id="event-type" name="event_type" class="form-field">
+                <option value="" disabled selected>Select event type</option>
+                <option value="private">Private Party / Social Event</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="wedding">Wedding / Reception</option>
+                <option value="festival">Festival / Public Show</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="event-date"
+                style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+              >When</label>
+              <input
+                id="event-date"
+                type="text"
+                name="event_date"
+                placeholder="Month, Year or approximate"
+                class="form-field"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="event-location"
+              style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+            >Event Location</label>
+            <input
+              id="event-location"
+              type="text"
+              name="event_location"
+              required
+              placeholder="City/venue where the event will take place"
+              class="form-field"
+            />
+          </div>
+
+          <div>
+            <label
+              for="message"
+              style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
+            >Tell Him About It</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="The nature of the event, approximate guest count, location — and anything else I should probably know."
+              class="form-field"
+              style="resize:vertical;"
+            ></textarea>
+          </div>
+
+          <div class="text-center pt-2">
+            <button type="submit" class="btn-gold">Send Inquiry</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.querySelector('form[name="booking"]')?.addEventListener('submit', () => {
+    (window as any).oaiq?.(
+      "measure",
+      "lead_created",
+      { type: "customer_action" }
+    );
+  });
+</script>
