@@ -2,42 +2,43 @@
 const services = [
   {
     glyph: '⬡',
-    title: 'Private Engagements',
-    body: 'For parties or 5 or more, enjoy a private show that will leave you and your guests something to remember for a long time, all from the comfort of your own couch.',
-    detail: '',
-  },  {
+    title: 'Private Parties',
+    eventType: 'private',
+    body: 'Your living room becomes the front row. Close-up magic and mind reading for groups of 5 or more, performed inches from your guests, with everyone pulled into the act.',
+  },
+  {
     glyph: '❖',
-    title: 'Stage & Parlor',
-    body: 'An evening-length experience of stand up entertainment for rooms full of people who came for a show and leave with a story. Experience having your mind read, controlled, and influenced, and magical feats. Don’t worry though, I only tell the good things I see! ',
-    detail: '',
-  }, 
-    {
+    title: 'Corporate & Stage Shows',
+    eventType: 'corporate',
+    body: 'A full show for rooms that came to be entertained. Guests have their minds read, their choices predicted, and their certainty politely dismantled. Don’t worry, I only reveal the good things I see.',
+  },
+  {
     glyph: '◈',
-    title: 'Seance & Spiritualism Show',
-    body: "A one of a kind evening for small groups who are brave enough to experience something otherworldly. This is not for the faint of heart, and only for adults 18+. This show contains ghost stories, strange magic, and adult themes not suitable for the faint of heart or anyone under 18yrs old. I'll attempt to speak to the spirits, and they might just try to answer me...... ",
-    detail: '',
+    title: 'Séance & Spiritualism Show',
+    eventType: 'seance',
+    body: 'An evening for small groups brave enough to sit in the dark with something otherworldly. Ghost stories, strange magic, and an attempt to reach the spirits, who may just answer back. Not for the faint of heart.',
   },
 ];
 ---
 
-<section id="craft" style="background:#1c1710; padding: 7rem 0;">
+<section id="craft" aria-labelledby="craft-heading" style="background:#1c1710; padding: 7rem 0;">
   <div class="max-w-6xl mx-auto px-6 md:px-10">
 
     <!-- Heading -->
     <div class="reveal text-center mb-16">
-      <span class="section-label">What I Do</span>
-      <div class="rule-short"></div>
       <h2
+        id="craft-heading"
         style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,2.75rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
       >
-        Services
+        Choose Your Show
       </h2>
+      <div class="rule-short"></div>
     </div>
 
     <!-- Cards -->
     <div class="grid md:grid-cols-3 gap-6">
       {services.map((s, i) => (
-        <div class={`craft-card reveal reveal-delay-${i + 1 as 1 | 2 | 3}`}>
+        <article class={`craft-card relative flex flex-col reveal reveal-delay-${i + 1 as 1 | 2 | 3}`}>
           <!-- Glyph -->
           <div style="font-size:1.5rem; color:rgba(184,146,74,0.5); margin-bottom:1.25rem;" aria-hidden="true">
             {s.glyph}
@@ -47,24 +48,20 @@ const services = [
           <h3
             style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:#f5e9cc; margin-bottom:1rem; letter-spacing:0.03em;"
           >
-            {s.title}
+            <a href="#book" class="craft-card-link" data-event-type={s.eventType}>{s.title}</a>
           </h3>
 
           <!-- Rule -->
           <div style="width:36px; height:1px; background:#b8924a; opacity:0.6; margin-bottom:1.25rem;"></div>
 
           <!-- Body -->
-          <p style="color:#a09078; font-size:0.97rem; line-height:1.8; margin-bottom:1.5rem;">
+          <p style="color:#a09078; font-size:0.97rem; line-height:1.8; margin-bottom:1.75rem;">
             {s.body}
           </p>
 
-          <!-- Detail -->
-          <p
-            style="font-family:'Cormorant Garamond',serif; font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; color:#9a8870;"
-          >
-            {s.detail}
-          </p>
-        </div>
+          <!-- Visual cue; the whole card is clickable via the title link -->
+          <p class="craft-card-cta mt-auto" aria-hidden="true">Book this show &rarr;</p>
+        </article>
       ))}
     </div>
 
@@ -77,3 +74,13 @@ const services = [
     </div>
   </div>
 </section>
+
+<script>
+  // Preselect the matching event type in the booking form
+  document.querySelectorAll<HTMLAnchorElement>('.craft-card-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      const select = document.getElementById('event-type') as HTMLSelectElement | null;
+      if (select && link.dataset.eventType) select.value = link.dataset.eventType;
+    });
+  });
+</script>

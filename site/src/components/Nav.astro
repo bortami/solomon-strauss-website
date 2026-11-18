@@ -5,10 +5,11 @@ const isHome = Astro.url.pathname === '/';
 const p = (anchor: string) => isHome ? anchor : `/${anchor}`;
 
 const links = [
+  { href: p('#reel'),         label: 'Reel' },
+  { href: p('#craft'),        label: 'Shows & Events' },
+  { href: p('#testimonials'), label: 'Reviews' },
   { href: p('#about'),        label: 'About' },
-  { href: p('#craft'),        label: 'The Craft' },
-  { href: p('#testimonials'), label: 'Testimonials' },
-  ...(upcomingShows.length > 0 ? [{ href: p('#shows'), label: 'Shows' }] : []),
+  ...(upcomingShows.length > 0 ? [{ href: p('#shows'), label: 'Upcoming' }] : []),
   { href: p('#book'),         label: 'Book' },
 ];
 
@@ -26,7 +27,7 @@ const logoHref = isHome ? '#top' : '/';
     <a
       href={logoHref}
       class="text-cream no-underline"
-      style="font-family: 'Cinzel Decorative', serif; font-size: 0.85rem; letter-spacing: 0.1em; color: #f5e9cc;"
+      style="font-family: 'Solomon Header', 'Cinzel Decorative', serif; font-size: 1.5rem; letter-spacing: 0.06em; color: #f5e9cc;"
     >
       Solomon Strange
     </a>

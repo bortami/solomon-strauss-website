@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+/* Solomon's brand font — used only for his name and signature lines.
+   Awaiting web license from the designer (Hanoded) — confirm before deploying. */
+@font-face {
+  font-family: 'Solomon Header';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/solomon-header-font.otf') format('opentype');
+}
+
 @theme {
   --color-bg: #0f0d0a;
   --color-surface: #1c1710;
@@ -108,6 +118,36 @@ body {
   border-top-color: #d4ae6a;
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Clickable service cards — title link stretches over the whole card */
+.craft-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+/* Stretch the title link over the whole card */
+.craft-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+.craft-card-link:focus-visible {
+  outline: none;
+}
+.craft-card:has(.craft-card-link:focus-visible) {
+  outline: 1px solid #b8924a;
+  outline-offset: 4px;
+}
+.craft-card-cta {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b8924a;
+  transition: color 0.3s ease;
+}
+.craft-card:hover .craft-card-cta {
+  color: #f5e9cc;
 }
 
 /* ── Testimonial ──────────────────────────────────────────── */

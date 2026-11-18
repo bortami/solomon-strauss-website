@@ -3,12 +3,10 @@
 
 <section
   id="top"
-  class="relative min-h-screen flex flex-col items-center justify-center text-center hero-bg texture overflow-hidden"
-  style="padding: 6rem 1.5rem 4rem;"
+  aria-labelledby="hero-heading"
+  class="relative hero-bg texture overflow-hidden"
+  style="padding: 6.5rem 1.5rem 3.5rem;"
 >
-  <!-- Optional: swap this div for a real <img> once you have photography -->
-  <!-- <img src="/images/hero.jpg" alt="Solomon Strange" class="absolute inset-0 w-full h-full object-cover object-center opacity-25" /> -->
-
   <!-- Vignette overlay -->
   <div
     class="absolute inset-0 pointer-events-none"
@@ -16,54 +14,73 @@
   ></div>
 
   <!-- Content -->
-  <div class="relative max-w-3xl mx-auto" style="z-index: 3;">
+  <div class="relative max-w-5xl mx-auto grid md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-14 items-center" style="z-index: 3;">
 
-    <!-- Ornament -->
-    <p class="ornament mb-6" style="font-size:0.85rem; letter-spacing:0.6em;" aria-hidden="true">· · · ✦ · · ·</p>
+    <!-- Photo (first on mobile so a face is on screen immediately) -->
+    <div class="order-first md:order-last">
+      <div
+        class="relative mx-auto w-full max-w-[260px] md:max-w-none aspect-[4/5] overflow-hidden gold-corners"
+        style="border: 1px solid rgba(184,146,74,0.25);"
+      >
+        <img
+          src="/images/gallery/solomon-strange-magic-web.jpg"
+          alt="Solomon Strange performing magic for an amazed guest in Oklahoma"
+          width="1200"
+          height="1200"
+          fetchpriority="high"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="object-position: 50% 40%; filter: contrast(1.05) sepia(0.15);"
+        />
+      </div>
+    </div>
 
-    <!-- Name -->
-    <h1
-      style="font-family: 'Cinzel Decorative', serif; font-size: clamp(1.75rem, 5vw, 3.25rem); color: #f5e9cc; font-weight: 400; letter-spacing: 0.06em; line-height: 1.2; margin-bottom: 1.5rem;"
-    >
-      Solomon Strange
-    </h1>
+    <!-- Text -->
+    <div class="text-center md:text-left">
+      <h1
+        id="hero-heading"
+        style="font-family:'Cormorant Garamond', serif; font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight:400; color:#f5e9cc; letter-spacing:0.01em; line-height:1.15; margin-bottom: 1.5rem;"
+      >
+        Mind Reading &amp; Magic for Oklahoma Events
+      </h1>
 
-    <!-- Rule -->
-    <div class="rule max-w-xs mx-auto mb-5"></div>
+      <div class="rule max-w-xs mx-auto md:mx-0 mb-6"></div>
 
-    <!-- Subtitle -->
-    <p
-      style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-style: italic; font-weight: 300; color: #b8924a; letter-spacing: 0.15em; margin-bottom: 0.85rem;"
-    >
-      Mentalist &nbsp;·&nbsp; Magician &nbsp;·&nbsp; Storyteller
-    </p>
+      <p
+        style="font-family: 'Lora', serif; font-size: clamp(1rem, 2vw, 1.15rem); color: #c4b49a; max-width: 44ch; line-height: 1.8; margin-bottom: 2.25rem;"
+        class="mx-auto md:mx-0"
+      >
+        Thirty years of weaving Magic, Mentalism, and Storytelling into strange, unforgettable experiences.
+      </p>
 
-    <!-- Location -->
-    <p
-      style="font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase; color: #9a8870; margin-bottom: 2.25rem;"
-    >
-      Based in Oklahoma City
-    </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-5 sm:gap-7 mb-8">
+        <a href="#book" class="btn-gold">Book an Experience</a>
+        <a href="#reel" class="hero-reel-link">▶&nbsp; Watch the Reel</a>
+      </div>
 
-    <!-- Tagline -->
-    <p
-      style="font-family: 'Lora', serif; font-size: clamp(1rem, 2vw, 1.15rem); color: #9a8870; max-width: 46ch; margin: 0 auto 3rem; line-height: 1.8;"
-    >
-      Thirty years of weaving Magic, Mentalism, and Storytelling into strange, unforgettable experiences.
-  
-    </p>
-
-    <!-- CTA -->
-    <a href="#book" class="btn-gold">Book an Experience</a>
-  </div>
-
-  <!-- Scroll indicator -->
-  <div
-    class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-    style="z-index: 3; opacity: 0.4;"
-    aria-hidden="true"
-  >
-    <span style="font-family:'Cormorant Garamond',serif; font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:#b8924a;">Scroll</span>
-    <div style="width:1px; height:40px; background: linear-gradient(180deg,#b8924a,transparent);"></div>
+      <p
+        style="font-family:'Cormorant Garamond', serif; font-size:0.8rem; letter-spacing:0.22em; text-transform:uppercase; color:#9a8870;"
+      >
+        Top-rated &nbsp;·&nbsp; Award-winning &nbsp;·&nbsp; 30 years performing
+      </p>
+    </div>
   </div>
 </section>
+
+<style>
+  .hero-reel-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #b8924a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,146,74,0.35);
+    padding-bottom: 0.2rem;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .hero-reel-link:hover,
+  .hero-reel-link:focus-visible {
+    color: #f5e9cc;
+    border-color: #f5e9cc;
+  }
+</style>

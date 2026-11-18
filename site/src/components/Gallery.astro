@@ -1,73 +1,82 @@
 ---
 ---
 
-<section id="gallery" style="background:#0f0d0a; padding: 7rem 0;">
+<section id="gallery" aria-labelledby="gallery-heading" style="background:#0f0d0a; padding: 7rem 0;">
   <div class="max-w-6xl mx-auto px-6 md:px-10">
 
     <div class="reveal text-center mb-14">
-      <span class="section-label">In Performance</span>
-      <div class="rule-short"></div>
       <h2
+        id="gallery-heading"
         style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,2.75rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
       >
-        The Work
+        On Stage &amp; Up Close
       </h2>
+      <div class="rule-short"></div>
     </div>
 
     <!-- Masonry grid — 2 cols mobile, 3 cols desktop -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-3 reveal">
 
       <!-- Row 0: hero shot, full width -->
-      <div class="relative overflow-hidden aspect-[16/9] col-span-2 md:col-span-3 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+      <figure class="relative overflow-hidden aspect-[16/9] col-span-2 md:col-span-3 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
         <img
           src="/images/gallery/solomon-strange-hero.jpg"
-          alt="Solomon Strange performing"
+          alt="Solomon Strange performing on stage with his cast"
           class="absolute inset-0 w-full h-full object-cover"
           style="filter:contrast(1.05) sepia(0.12);"
           loading="lazy"
         />
         <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
-      </div>
+      </figure>
 
-      <!-- Row 1: portrait + wide landscape spanning 2 cols -->
-
-
-            <div class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
-        <img
-          src="/images/gallery/solomon-strange-event.jpg"
-          alt="Solomon Strange at an event"
-          class="absolute inset-0 w-full h-full object-cover"
-          style="filter:contrast(1.05) sepia(0.12);"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+      <!-- Row 1: four squares — 2×2 on mobile, one row on desktop -->
+      <div class="col-span-2 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <figure class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+          <img
+            src="/images/gallery/solomon-strange-event.jpg"
+            alt="Solomon Strange at an event"
+            class="absolute inset-0 w-full h-full object-cover"
+            style="filter:contrast(1.05) sepia(0.12);"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+        </figure>
+        <figure class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+          <img
+            src="/images/gallery/solomon-strange-mentalism.jpg"
+            alt="Solomon Strange performing mentalism"
+            class="absolute inset-0 w-full h-full object-cover"
+            style="filter:contrast(1.05) sepia(0.12);"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+        </figure>
+        <figure class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+          <img
+            src="/images/gallery/solomon-strange-closeup-1.jpeg"
+            alt="Solomon Strange close-up"
+            class="absolute inset-0 w-full h-full object-cover"
+            style="filter:contrast(1.05) sepia(0.12);"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+        </figure>
+        <figure class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+          <img
+            src="/images/gallery/solomon-strange-living-room-web.jpg"
+            alt="Solomon Strange performing mentalism for guests at a private party in a living room"
+            class="absolute inset-0 w-full h-full object-cover"
+            style="filter:contrast(1.05) sepia(0.12);"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
+        </figure>
       </div>
-      <div class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
-        <img
-          src="/images/gallery/solomon-strange-mentalism.jpg"
-          alt="Solomon Strange performing mentalism"
-          class="absolute inset-0 w-full h-full object-cover"
-          style="filter:contrast(1.05) sepia(0.12);"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
-      </div>
-      <div class="relative overflow-hidden aspect-square gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
-        <img
-          src="/images/gallery/solomon-strange-closeup-1.jpeg"
-          alt="Solomon Strange close-up"
-          class="absolute inset-0 w-full h-full object-cover"
-          style="filter:contrast(1.05) sepia(0.12);"
-          loading="lazy"
-        />
-        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
-      </div>
-
 
       <!-- Row 2: wide + portrait, always paired on one row -->
 
       <div class="col-span-2 md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-3">
-        <div class="relative overflow-hidden aspect-[3/4] md:aspect-[4/3] col-span-1 md:col-span-2 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <figure class="relative overflow-hidden aspect-[3/4] md:aspect-[4/3] col-span-1 md:col-span-2 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
           <img
             src="/images/gallery/solomon-strange-performance.jpg"
             alt="Solomon Strange performing"
@@ -76,23 +85,23 @@
             loading="lazy"
           />
           <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
-        </div>
+        </figure>
 
-        <div class="relative overflow-hidden aspect-[3/4] md:aspect-2/3 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <figure class="relative overflow-hidden aspect-[3/4] md:aspect-2/3 gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
           <img
-            src="/images/gallery/solomon-strange-closeup-2.jpeg"
-            alt="Solomon Strange close-up"
+            src="/images/gallery/solomon-strange-private-party-web.jpg"
+            alt="Solomon Strange performing a private Halloween party show in a decorated living room"
             class="absolute inset-0 w-full h-full object-cover"
             style="filter:contrast(1.05) sepia(0.12);"
             loading="lazy"
           />
           <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
-        </div>
+        </figure>
       </div>
 
       <!-- Row 3: last two shots share a row -->
       <div class="col-span-2 md:col-span-3 grid grid-cols-2 gap-3">
-        <div class="relative overflow-hidden aspect-[3/2] gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        <figure class="relative overflow-hidden aspect-[3/2] gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
           <img
             src="/images/gallery/solomon-strange-onstage.jpg"
             alt="Solomon Strange on stage"
@@ -101,8 +110,8 @@
             loading="lazy"
           />
           <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
-        </div>
-        <div class="relative overflow-hidden aspect-[3/2] gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
+        </figure>
+        <figure class="relative overflow-hidden aspect-[3/2] gold-corners" style="border:1px solid rgba(184,146,74,0.1);">
           <img
             src="/images/gallery/solomon-strange-portrait.jpg"
             alt="Solomon Strange performing"
@@ -111,26 +120,9 @@
             loading="lazy"
           />
           <div class="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100" style="background:rgba(184,146,74,0.06);"></div>
-        </div>
+        </figure>
       </div>
 
-    </div>
-
-    <!-- Video reel -->
-    <div class="reveal mt-3">
-      <div
-        class="relative w-full aspect-video gold-corners"
-        style="background:#1c1710; border: 1px solid rgba(184,146,74,0.2);"
-      >
-        <iframe
-          src="https://www.youtube.com/embed/hN3cbVCqz04"
-          class="absolute inset-0 w-full h-full"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          title="Solomon Strange performance reel"
-        ></iframe>
-      </div>
     </div>
 
   </div>

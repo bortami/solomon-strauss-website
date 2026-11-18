@@ -1,0 +1,97 @@
+---
+const videoId = 'hN3cbVCqz04';
+---
+
+<section id="reel" aria-labelledby="reel-heading" style="background:#0f0d0a; padding: 4rem 0 6rem;">
+  <div class="max-w-5xl mx-auto px-6 md:px-10">
+
+    <div class="reveal text-center mb-10">
+      <h2
+        id="reel-heading"
+        style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,2.75rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
+      >
+        Watch Closely
+      </h2>
+      <div class="rule-short"></div>
+    </div>
+
+    <!-- Lightweight YouTube facade: the player only loads when clicked, keeping the page fast -->
+    <div class="reveal relative w-full aspect-video gold-corners" style="background:#1c1710; border: 1px solid rgba(184,146,74,0.2);">
+      <button
+        type="button"
+        id="reel-play"
+        data-video-id={videoId}
+        class="reel-facade absolute inset-0 w-full h-full"
+        aria-label="Play Solomon Strange performance reel"
+      >
+        <img
+          src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+          alt=""
+          loading="lazy"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="filter:contrast(1.05) sepia(0.12);"
+        />
+        <span class="reel-play-icon" aria-hidden="true">▶</span>
+      </button>
+    </div>
+
+    <!-- Audience reaction -->
+    <figure class="reveal text-center mt-12" style="max-width:48ch; margin-left:auto; margin-right:auto;">
+      <blockquote class="pull-quote" style="border:none; padding:0;">
+        “He knew the name of a friend I hadn’t talked to in years. And where did that f***king watch come from?”
+      </blockquote>
+      <figcaption style="font-family:'Cormorant Garamond',serif; font-size:0.8rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-top:1rem;">
+        — Brian
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<style>
+  .reel-facade {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    background: transparent;
+  }
+  .reel-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 76px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 6px;
+    border: 1px solid #b8924a;
+    border-radius: 50%;
+    background: rgba(15,13,10,0.7);
+    color: #f5e9cc;
+    font-size: 1.6rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .reel-facade:hover .reel-play-icon,
+  .reel-facade:focus-visible .reel-play-icon {
+    background: #b8924a;
+    color: #0f0d0a;
+    box-shadow: 0 0 32px rgba(184,146,74,0.35);
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('reel-play');
+  btn?.addEventListener('click', () => {
+    const id = btn.dataset.videoId;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    iframe.title = 'Solomon Strange performance reel';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.className = 'absolute inset-0 w-full h-full';
+    iframe.style.border = '0';
+    btn.replaceWith(iframe);
+  });
+</script>

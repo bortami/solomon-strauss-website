@@ -5,19 +5,21 @@ import Footer from '../components/Footer.astro';
 const services = [
   {
     glyph: '⬡',
-    title: 'Private Engagements',
-    body: 'For parties or 5 or more, enjoy a private show that will leave you and your guests something to remember for a long time, all from the comfort of your own couch.',
+    title: 'Private Parties',
+    eventType: 'private',
+    body: 'Your living room becomes the front row. Close-up magic and mind reading for groups of 5 or more, performed inches from your guests, with everyone pulled into the act.',
   },
   {
     glyph: '❖',
-    title: 'Stage & Parlor',
-    body: 'An evening-length experience of stand up entertainment for rooms full of people who came for a show and leave with a story. Experience having your mind read, controlled, and influenced, and magical feats. Don’t worry though, I only tell the good things I see!',
+    title: 'Corporate & Stage Shows',
+    eventType: 'corporate',
+    body: 'A full show for rooms that came to be entertained. Guests have their minds read, their choices predicted, and their certainty politely dismantled. Don’t worry, I only reveal the good things I see.',
   },
 ];
 
 const credentials = [
   'Thirty years of experience',
-  'Top-rated on GigSalad · Award-winning performer',
+  'Top-rated · Award-winning performer',
   'Corporate events, private gatherings, theater & stage',
   'Oklahoma City, Tulsa & Beyond',
 ];
@@ -25,24 +27,24 @@ const credentials = [
 const testimonials = [
   {
     quote: "Absolutely blew us away. He was funny and his timing was excellent. Every trick was compelling and astonishing. Definitely would recommend and will likely hire again!",
-    attribution: 'G. Rucci · Private Event · Oklahoma City, OK',
+    attribution: 'G. Rucci · Oklahoma City',
   },
   {
     quote: "This guy was extremely professional, as well as wonderfully entertaining. He goes above and beyond to do a great show and is very, very laid-back and easy to work with.",
-    attribution: 'P. Laughlin · Corporate Event · Oklahoma City, OK',
+    attribution: 'P. Laughlin · Oklahoma City',
   },
 ];
 ---
 
 <Layout
-  title="Hire Solomon Strange — Mentalist, Magician & Storyteller | Oklahoma City"
-  description="Book award-winning entertainment for your corporate event or private party in Oklahoma City. Thirty years of magic & mind reading. I respond within two business days."
+  title="Hire Solomon Strange — Mentalist, Magician & Storyteller | Oklahoma"
+  description="Book award-winning entertainment for your corporate event or private party anywhere in Oklahoma. Thirty years of magic & mind reading. I respond within two business days."
 >
   <!-- Minimal header — name only, no nav away from this page -->
   <header style="padding: 1.75rem 1.5rem 0;">
     <div class="max-w-3xl mx-auto text-center">
       <p
-        style="font-family:'Cinzel Decorative', serif; font-size:0.85rem; letter-spacing:0.1em; color:#f5e9cc;"
+        style="font-family:'Solomon Header', 'Cinzel Decorative', serif; font-size:1.5rem; letter-spacing:0.06em; color:#f5e9cc;"
       >Solomon Strange</p>
     </div>
   </header>
@@ -83,7 +85,7 @@ const testimonials = [
           <p
             style="font-family: 'Lora', serif; font-size: clamp(1rem, 2vw, 1.1rem); color: #9a8870; max-width: 46ch; margin: 0 auto 2.5rem; line-height: 1.8;"
           >
-            Thirty years of weaving Magic, Mentalism, and Storytelling into strange, unforgettable experiences.
+            Interactive magic and mind reading that pulls everyone in the room into the act.
           </p>
 
           <a href="#book-form" class="btn-gold">Check Availability</a>
@@ -122,26 +124,31 @@ const testimonials = [
     <section style="background:#0f0d0a; padding: 5rem 0;">
       <div class="max-w-4xl mx-auto px-6 md:px-10">
         <div class="text-center mb-12">
-          <span class="section-label">What You Get</span>
+          <h2
+            style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.85rem,4vw,2.5rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
+          >
+            What Your Guests Get
+          </h2>
           <div class="rule-short"></div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           {services.map(s => (
-            <div class="craft-card">
+            <article class="craft-card relative flex flex-col">
               <div style="font-size:1.5rem; color:rgba(184,146,74,0.5); margin-bottom:1.25rem;" aria-hidden="true">
                 {s.glyph}
               </div>
               <h3
                 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:#f5e9cc; margin-bottom:1rem; letter-spacing:0.03em;"
               >
-                {s.title}
+                <a href="#book-form" class="craft-card-link" data-event-type={s.eventType}>{s.title}</a>
               </h3>
               <div style="width:36px; height:1px; background:#b8924a; opacity:0.6; margin-bottom:1.25rem;"></div>
-              <p style="color:#a09078; font-size:0.95rem; line-height:1.8;">
+              <p style="color:#a09078; font-size:0.95rem; line-height:1.8; margin-bottom:1.75rem;">
                 {s.body}
               </p>
-            </div>
+              <p class="craft-card-cta mt-auto" aria-hidden="true">Book this show &rarr;</p>
+            </article>
           ))}
         </div>
       </div>
@@ -151,24 +158,28 @@ const testimonials = [
     <section style="background:#1c1710; padding: 5rem 0;">
       <div class="max-w-3xl mx-auto px-6 md:px-10">
         <div class="text-center mb-12">
-          <span class="section-label">Reviews</span>
+          <h2
+            style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.85rem,4vw,2.5rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
+          >
+            What Hosts Say
+          </h2>
           <div class="rule-short"></div>
         </div>
 
         <div class="space-y-10">
           {testimonials.map(t => (
-            <div class="testimonial">
-              <p
+            <figure class="testimonial">
+              <blockquote
                 style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem, 2.5vw, 1.3rem); font-weight:300; color:#e8ddc8; line-height:1.65; margin-bottom:0.75rem;"
               >
                 {t.quote}
-              </p>
-              <p
+              </blockquote>
+              <figcaption
                 style="font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a;"
               >
                 — {t.attribution}
-              </p>
-            </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
@@ -179,13 +190,12 @@ const testimonials = [
       <div class="max-w-3xl mx-auto px-6 md:px-10">
 
         <div class="text-center mb-4">
-          <span class="section-label">Inquiries</span>
-          <div class="rule-short"></div>
           <h2
             style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.85rem,4vw,2.5rem); font-weight:400; color:#f5e9cc; letter-spacing:0.04em;"
           >
             Check Your Date
           </h2>
+          <div class="rule-short"></div>
         </div>
 
         <div class="text-center mb-10">
@@ -316,6 +326,14 @@ const testimonials = [
 </Layout>
 
 <script>
+  // Preselect the matching event type in the booking form
+  document.querySelectorAll<HTMLAnchorElement>('.craft-card-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      const select = document.getElementById('event-type') as HTMLSelectElement | null;
+      if (select && link.dataset.eventType) select.value = link.dataset.eventType;
+    });
+  });
+
   document.querySelector('form[name="booking"]')?.addEventListener('submit', () => {
     (window as any).oaiq?.(
       "measure",

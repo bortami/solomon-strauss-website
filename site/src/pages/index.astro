@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
+import Reel from '../components/Reel.astro';
 import About from '../components/About.astro';
 import Craft from '../components/Craft.astro';
 import Gallery from '../components/Gallery.astro';
@@ -12,16 +13,17 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Solomon Strange — Mentalist, Magician & Storyteller | Oklahoma City"
-  description="Solomon Strange is an award-winning mentalist, magician and storyteller based in Oklahoma City. Thirty years of close-up magic, stage illusions, and telling stories that keeps people up at night."
+  title="Solomon Strange — Mentalist, Magician & Storyteller | Oklahoma"
+  description="Award-winning mentalist and magician performing across Oklahoma, from OKC to Tulsa. Interactive mind reading and magic for corporate events and private parties."
 >
   <Nav />
   <main id="main-content">
     <Hero />
-    <About />
+    <Reel />
     <Craft />
-    <Gallery />
     <Testimonials />
+    <Gallery />
+    <About />
     <Shows />
     <Book />
   </main>
