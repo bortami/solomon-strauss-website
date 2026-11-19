@@ -37,6 +37,8 @@
     <form
       class="reveal space-y-8"
       name="booking"
+      toolname="request_booking"
+      tooldescription="Fill in a booking inquiry to Solomon Strange for a private party, corporate event or other occasion. The visitor reviews the details and clicks Send Inquiry; Solomon replies by email within about two business days."
       method="POST"
       action="https://api.web3forms.com/submit"
     >
@@ -52,6 +54,7 @@
           >Your Name</label>
           <input
             id="name"
+            toolparamdescription="Full name of the person making the inquiry"
             type="text"
             name="name"
             required
@@ -67,6 +70,7 @@
           >Email Address</label>
           <input
             id="email"
+            toolparamdescription="Email address where Solomon should send his reply"
             type="email"
             name="email"
             required
@@ -83,7 +87,7 @@
             for="event-type"
             style="display:block; font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.25em; text-transform:uppercase; color:#b8924a; margin-bottom:0.5rem;"
           >The Occasion</label>
-          <select id="event-type" name="event_type" class="form-field">
+          <select id="event-type" toolparamdescription="Kind of event; pick the closest match, or other" name="event_type" class="form-field">
             <option value="" disabled selected>Select event type</option>
             <option value="private">Private Party / Social Event</option>
             <option value="corporate">Corporate Event</option>
@@ -100,6 +104,7 @@
           >When</label>
           <input
             id="event-date"
+            toolparamdescription="Event date in the visitor’s own words, e.g. March 14, 2027 or sometime next October"
             type="text"
             name="event_date"
             placeholder="Month, Year or approximate"
@@ -115,6 +120,7 @@
         >Event Location</label>
         <input
           id="event-location"
+          toolparamdescription="City and, if known, venue where the event will take place"
           type="text"
           name="event_location"
           required
@@ -130,6 +136,7 @@
         >Tell Him About It</label>
         <textarea
           id="message"
+          toolparamdescription="Anything else about the event: occasion, approximate guest count, timing, special requests"
           name="message"
           rows="5"
           placeholder="The nature of the event, approximate guest count, location — and anything else I should probably know."

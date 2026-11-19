@@ -1,0 +1,78 @@
+---
+// WebMCP (https://github.com/webmachinelearning/webmcp) — exposes read-only
+// tools so in-browser AI agents can answer visitor questions from the same data
+// the pages render. The booking forms are exposed declaratively via
+// toolname/tooldescription attributes, so the visitor always clicks Send.
+---
+
+<script>
+  import { faqs } from '../data/faqs';
+  import { services } from '../data/services';
+  import { upcomingShows } from '../data/shows';
+
+  const modelContext = (document as any).modelContext ?? (navigator as any).modelContext;
+
+  const text = (value: unknown) => ({
+    content: [{ type: 'text', text: typeof value === 'string' ? value : JSON.stringify(value, null, 2) }],
+  });
+
+  const tools = [
+    {
+      name: 'get_booking_details',
+      description:
+        'Get everything needed to answer questions about hiring Solomon Strange, an Oklahoma City mentalist, magician and storyteller: the shows he offers, where he performs, how booking works, and his full FAQ (pricing approach, show length, travel, audience age, cancellations). Use this before filling in the booking inquiry form.',
+      inputSchema: { type: 'object', properties: {} },
+      annotations: { readOnlyHint: true },
+      execute: async () =>
+        text({
+          performer: 'Solomon Strange — mentalist, magician & storyteller with thirty years of experience',
+          based_in: 'Oklahoma City, OK',
+          service_area: 'Throughout Oklahoma (Oklahoma City, Tulsa and beyond); national travel for the right engagement',
+          shows: services.map(({ title, eventType, body }) => ({ title, event_type: eventType, description: body })),
+          how_to_book:
+            'Fill in the booking inquiry form on https://solomonstrange.com/#book. Solomon replies within about two business days with questions and a quote. Prices are not published.',
+          faq_page: 'https://solomonstrange.com/faq',
+          faq: faqs.map(({ q, a }) => ({ question: q, answer: a })),
+        }),
+    },
+  ];
+
+  // Only offer the shows tool when there is something to list
+  if (upcomingShows.length > 0) {
+    tools.push({
+      name: 'list_upcoming_shows',
+      description:
+        'List Solomon Strange’s upcoming public performances with date, time, venue, city and a ticket link when tickets are on sale.',
+      inputSchema: { type: 'object', properties: {} },
+      annotations: { readOnlyHint: true },
+      execute: async () =>
+        text(
+          upcomingShows.map((show) => ({
+            date: show.date,
+            day: show.day,
+            time: show.time,
+            venue: show.venue,
+            location: show.location,
+            description: show.description,
+            tickets: show.soldOut ? 'Sold out' : show.ticketUrl ?? 'Free admission',
+          })),
+        ),
+    });
+  }
+
+  if (modelContext?.registerTool) {
+    // Register all or none, so an agent never sees a partial tool set
+    const controller = new AbortController();
+    Promise.all(tools.map((tool) => modelContext.registerTool(tool, { signal: controller.signal }))).catch(
+      () => controller.abort(),
+    );
+
+    // When an agent fills a booking form, bring it into view so the visitor can review and send it
+    modelContext.addEventListener?.('toolactivated', ({ toolName }: { toolName: string }) => {
+      const form = document.querySelector<HTMLFormElement>(`form[toolname="${toolName}"]`);
+      if (!form) return;
+      form.classList.add('visible');
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+</script>
