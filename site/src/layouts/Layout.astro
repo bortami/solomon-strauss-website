@@ -5,10 +5,12 @@ import WebMCP from '../components/WebMCP.astro';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
   title = 'Solomon Strange — Mentalist, Magician & Storyteller | Oklahoma',
+  noindex = false,
   description = 'Award-winning mentalist and magician performing across Oklahoma, from OKC to Tulsa. Interactive mind reading and magic for corporate events and private parties.',
 } = Astro.props;
 
@@ -24,6 +26,7 @@ const ogImage = 'https://solomonstrange.com/images/solomon-strange-headshot.jpg'
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0f0d0a" />
     <title>{title}</title>
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
